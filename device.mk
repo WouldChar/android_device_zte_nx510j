@@ -17,15 +17,16 @@
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-DEVICE_PACKAGE_OVERLAYS := \
-    $(LOCAL_PATH)/overlay
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Include package config fragments
 include $(LOCAL_PATH)/product/*.mk
 
-# setup dalvik vm configs.
+# Setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 
-# setup base hwui configs
+# Setup base hwui configs
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 # Call the proprietary setup
