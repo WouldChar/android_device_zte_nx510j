@@ -370,7 +370,7 @@
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
-    <!-- Enable blur support -->
-    <bool name="config_ui_blur_enabled">true</bool>
-
+    <!-- Support in Surfaceflinger for blur layers.
+         NOTE: This requires additional hardware-specific code. -->
+    <bool name="config_uiBlurEnabled">true</bool>
 </resources>
