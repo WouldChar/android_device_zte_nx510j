@@ -67,3 +67,10 @@ on post-fs-data
     chmod 0644 system system /sys/class/light/light/enable
     chmod 0644 system system /sys/class/light/light/delay
 # ADDED BY ZTEMT ZhuBing END
+
+    # GPU Tuning
+    chown root system /sys/class/kgsl/kgsl-3d0/dispatch/inflight
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/dispatch/inflight
+    chown root system /sys/class/kgsl/kgsl-3d0/dispatch/inflight_low_latency
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/dispatch/inflight_low_latency
+
