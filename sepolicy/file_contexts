@@ -34,8 +34,6 @@
 
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/config     u:object_r:frp_block_device:s0
 
-/system/bin/init.nubia.power.sh                             u:object_r:init-power-sh_exec:s0
-/system/bin/init.nubia.tp.sh                                u:object_r:init-tp-sh_exec:s0
 /sys/module/msm_performance(/.*)?                          u:object_r:sysfs_performance:s0
 /sys/module/lpm_levels(/.*)?                          u:object_r:sysfs_power_management:s0
 /sys/devices/soc\.0/qcom,bcl[^/]*(/.*)?                        u:object_r:sysfs_thermal:s0
