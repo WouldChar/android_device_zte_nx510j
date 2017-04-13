@@ -1,4 +1,4 @@
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,11 +22,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
+# Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/zte/nx510j/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_nx510j
@@ -42,5 +39,5 @@ PRODUCT_MANUFACTURER := nubia
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=NX510J PRODUCT_NAME=NX510J
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=nubia/NX510J/NX510J:7.1.1/NOF26W/nubia06210436:user/release-keys \
-    PRIVATE_BUILD_DESC="NX510J-user 7.1.1 NOF26W eng.nubia.20160621.043528 release-keys"
+    BUILD_FINGERPRINT=nubia/NX510J/NX510J:7.1.1/NOF26B/nubia06210436:user/release-keys \
+    PRIVATE_BUILD_DESC="NX510J-user 7.1.1 NOF26B eng.nubia.20160621.043528 release-keys"

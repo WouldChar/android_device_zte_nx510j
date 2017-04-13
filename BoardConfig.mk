@@ -1,26 +1,78 @@
-#
-# Copyright (C) 2016 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
 
-DEVICE_PATH := device/zte/nx510j
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8994
+TARGET_NO_BOOTLOADER := true
 
-# A new experiment..
-include $(DEVICE_PATH)/PlatformConfig.mk
-include $(DEVICE_PATH)/board/*.mk
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
 
-# Inherit from the proprietary version
--include vendor/zte/nx510j/BoardConfigVendor.mk
+# Platform
+TARGET_BOARD_PLATFORM := msm8994
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
+
+# Kernel
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE :=  4096
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
+
+TARGET_KERNEL_SOURCE := kernel/zte/msm8994
+TARGET_KERNEL_CONFIG := lineageos_nx510j_defconfig
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_ARCH := arm64
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-3
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_APPEND_DTB := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+
+# Partitions
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x04000000
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 268435456
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x04000000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2684354560
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11999358976
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+
+# Vendor Init
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+
+# Recovery
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_RECOVERY_SWIPE := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+# TWRP Build Flags
+TARGET_RECOVERY_FSTAB := device/zte/nx510j/recovery/etc/twrp.fstab
+TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TW_EXTRA_LANGUAGES := true
+TW_INCLUDE_CRYPTO := ture
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_DEFAULT_BRIGHTNESS := 80
+TW_INCLUDE_NTFS_3G := true
+
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    vro.allow.mock.location=0 \
+    ro.debuggable=1 \
+    ro.adb.secure=0
+
