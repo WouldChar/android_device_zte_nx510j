@@ -20,10 +20,12 @@ import re
 import sha
 
 def FullOTA_Assertions(info):
-  print "FullOTA_Assertions not implemented"
+    AddBasebandAssertion(info)
+    return
 
 def IncrementalOTA_Assertions(info):
-  print "IncrementalOTA_Assertions not implemented"
+    AddBasebandAssertion(info)
+    return
 
 def InstallImage(img_name, img_file, partition, info):
   common.ZipWriteStr(info.output_zip, img_name, img_file)
