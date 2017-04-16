@@ -35,16 +35,7 @@ tz.mbn                  /dev/block/bootdevice/by-name/tz
 rpm.mbn                 /dev/block/bootdevice/by-name/rpm
 emmc_appsboot.mbn       /dev/block/bootdevice/by-name/aboot
 hyp.mbn                 /dev/block/bootdevice/by-name/hyp
-pmic.mbn                 /dev/block/bootdevice/by-name/pmic
-
-# filename + .bak       backup partition
-
-sbl1.mbn.bak            /dev/block/bootdevice/by-name/sbl1bak
-tz.mbn.bak              /dev/block/bootdevice/by-name/tzbak
-rpm.mbn.bak             /dev/block/bootdevice/by-name/rpmbak
-emmc_appsboot.mbn.bak   /dev/block/bootdevice/by-name/abootbak
-hyp.mbn.bak             /dev/block/bootdevice/by-name/hypbak
-pmic.mbn.bak             /dev/block/bootdevice/by-name/pmicbak
+pmic.mbn                /dev/block/bootdevice/by-name/pmic
 
 sdi.mbn                 /dev/block/bootdevice/by-name/sdi
 splash.img              /dev/block/bootdevice/by-name/splash
