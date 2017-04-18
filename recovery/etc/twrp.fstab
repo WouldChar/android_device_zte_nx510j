@@ -7,7 +7,14 @@
 /efs1            emmc              /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
 /efs2            emmc              /dev/block/bootdevice/by-name/modemst2   flags=backup=1;subpartitionof=/efs1
 
+/firmware 	 vfat 		   /dev/block/bootdevice/by-name/modem	    flags=display="Modem";backup=1
+/persist 	 ext4 		   /dev/block/bootdevice/by-name/persist    flags=display="Persist";backup=1
+/misc		 emmc 		   /dev/block/bootdevice/by-name/misc	    flags=display="Misc";backup=1
+/aboot		 emmc		   /dev/block/bootdevice/by-name/aboot	    flags=display="Bootloader";backup=1
+/splash		 emmc		   /dev/block/bootdevice/by-name/splash	    flags=display="Splash";backup=1
+
 # Removable storage
 /external_sd     vfat              /dev/block/mmcblk1p1 /dev/block/mmcblk1  flags=display="Micro SDcard";storage;wipeingui;removable
 /sd-ext          ext4              /dev/block/mmcblk1p2                     flags=display="SD-Ext";wipeingui;removable
 /usb-otg         vfat              /dev/block/sda1      /dev/block/sda      flags=removable;storage;display=USB-OTG
+
