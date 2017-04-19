@@ -1,3 +1,6 @@
+PRODUCT_PACKAGES += \
+	tp_node.sh
+
 # Input device files for nx510j
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/Generic.kl:system/usr/keylayout/Generic.kl \
