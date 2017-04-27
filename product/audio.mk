@@ -37,9 +37,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # fluence multi-mic solution
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.fluencetype=fluence \
-    persist.audio.fluence.audiorec=false \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
-    persist.audio.fluence.mode=broadside
+    ro.qc.sdk.audio.fluencetype=fluence \
+    tunnel.audio.encode=false \
+    dmid=3067269873 \
+    audio.ds1.metainfo.key=273 \
+    audio.dolby.ds2.hardbypass=true \
+    audio.dolby.ds2.enabled=true \
+    audio.effect.name=dolby \
+    dolby.monospeaker=true

@@ -15,8 +15,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.multisim.config=dsds \
     persist.data.qmi.adb_logmask=0 \
     telephony.lteOnCdmaDevice=1 \
-    ro.telephony.default_cdma_sub=0
+    ro.telephony.default_cdma_sub=0 \
+    persist.radio.primarycard=true
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
