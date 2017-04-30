@@ -24,9 +24,6 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-import init.nubia.led.rc
-import init.nubia.nfc.rc
-import init.nubia.sensors.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
@@ -44,6 +41,10 @@ on boot
     chmod 0664 /sys/class/power_supply/battery/charging_enabled
     restorecon /sys/class/power_supply/battery/charging_enabled
 
+    # permissions for NFC
+    chmod 0660 /dev/bcm2079x
+    chown nfc nfc /dev/bcm2079x
+
 service zram-init /system/bin/sh /init.zram.sh
     class late_start
     user root
@@ -51,9 +52,100 @@ service zram-init /system/bin/sh /init.zram.sh
     oneshot
 
 #TP node start
-service tp_node /system/bin/sh /tp_node.sh
+service tp-init /system/bin/sh /init.tp.sh
     class main
     user root
     group root
     oneshot
 # TP node end
+
+on post-fs-data
+    # ADDED BY ZTEMT ZhuBing
+    # add the sensor sysfs permission
+    #hall_device
+    chown system system /sys/class/hall_device/hall_device/enable
+    chmod 0644 /sys/class/hall_device/hall_device/enable
+
+    #proximity
+    mkdir /persist/proxdata 0775 system system
+    chown system system /persist/proxdata
+    chmod 0775 /persist/proxdata
+    chown system system /sys/class/proximity/proximity/enable
+    chown system system /sys/class/proximity/proximity/prox_manual_calibrate_threshold
+    chown system system /sys/class/proximity/proximity/prox_init
+    chown system system /sys/class/proximity/proximity/prox_threshold_init
+    chown system system /sys/class/proximity/proximity/prox_offset_init
+    chown system system /sys/class/proximity/proximity/prox_thres
+    chown system system /sys/class/proximity/proximity/chip_name
+    chown system system /sys/class/proximity/proximity/prox_threshold_cal_start
+    chown system system /sys/class/proximity/proximity/prox_offset_cal_start
+    chown system system /sys/class/proximity/proximity/prox_offset_cal
+    chown system system /sys/class/proximity/proximity/prox_data_safe_range_max
+    chown system system /sys/class/proximity/proximity/prox_data_safe_range_min
+    chown system system /sys/class/proximity/proximity/prox_calibrate
+    chown system system /sys/class/proximity/proximity/prox_calibrate_start
+    chown system system /sys/class/proximity/proximity/prox_calibrate_result
+    chown system system /sys/class/proximity/proximity/prox_data_max
+    chown system system /sys/class/proximity/proximity/prox_debug
+    chown system system /sys/class/proximity/proximity/prox_thres_max
+    chown system system /sys/class/proximity/proximity/prox_thres_min
+    chown system system /sys/class/proximity/proximity/prox_threshold_high
+    chown system system /sys/class/proximity/proximity/prox_threshold_low
+    chown system system /sys/class/proximity/proximity/prox_thres_param_high
+    chown system system /sys/class/proximity/proximity/prox_thres_param_low
+    chown system system /sys/class/proximity/proximity/prox_pluse_length
+    chown system system /sys/class/proximity/proximity/prox_thres_pulse_count
+    chown system system /sys/class/proximity/proximity/prox_wakelock
+    chown system system /sys/class/proximity/proximity/prox_phone_is_sleep
+    chown system system /sys/class/proximity/proximity/prox_irq
+    chown system system /sys/class/proximity/proximity/prox_offset_cal_verify
+    chown system system /sys/class/proximity/proximity/prox_calibrate_verify
+
+    chmod 0644 /sys/class/proximity/proximity/enable
+    chmod 0644 /sys/class/proximity/proximity/prox_manual_calibrate_threshold
+    chmod 0644 /sys/class/proximity/proximity/chip_name
+    chmod 0644 /sys/class/proximity/proximity/prox_threshold_cal_start
+    chmod 0644 /sys/class/proximity/proximity/prox_offset_cal_start
+    chmod 0644 /sys/class/proximity/proximity/prox_data_safe_range_max
+    chmod 0644 /sys/class/proximity/proximity/prox_data_safe_range_min
+    chmod 0644 /sys/class/proximity/proximity/prox_calibrate_start
+    chmod 0644 /sys/class/proximity/proximity/prox_calibrate_result
+    chmod 0644 /sys/class/proximity/proximity/prox_debug
+    chmod 0644 /sys/class/proximity/proximity/prox_thres_max
+    chmod 0644 /sys/class/proximity/proximity/prox_thres_min
+    chmod 0644 /sys/class/proximity/proximity/prox_threshold_high
+    chmod 0644 /sys/class/proximity/proximity/prox_threshold_low
+    chmod 0644 /sys/class/proximity/proximity/prox_pluse_length
+    chmod 0644 /sys/class/proximity/proximity/prox_thres_pulse_count
+    chmod 0644 /sys/class/proximity/proximity/prox_irq
+    chmod 0644 /sys/class/proximity/proximity/prox_offset_cal_verify
+    chmod 0644 /sys/class/proximity/proximity/prox_calibrate_verify
+
+    #light
+    chown system system /sys/class/light/light/enable
+    chown system system /sys/class/light/light/delay
+
+    chmod 0644 system system /sys/class/light/light/enable
+    chmod 0644 system system /sys/class/light/light/delay
+    # ADDED BY ZTEMT ZhuBing END
+
+    # GPU Tuning
+    chown root system /sys/class/kgsl/kgsl-3d0/dispatch/inflight
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/dispatch/inflight
+    chown root system /sys/class/kgsl/kgsl-3d0/dispatch/inflight_low_latency
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/dispatch/inflight_low_latency
+
+    # Nubia LED
+    chown system system /sys/class/leds/nubia_led/brightness
+    chown system system /sys/class/leds/nubia_led/lut_flags
+    chown system system /sys/class/leds/nubia_led/pause_hi
+    chown system system /sys/class/leds/nubia_led/pause_lo
+    chown system system /sys/class/leds/nubia_led/ramp_step_ms
+    chown system system /sys/class/leds/nubia_led/duty_pcts
+    chown system system /sys/class/leds/nubia_led/outn
+    chown system system /sys/class/leds/nubia_led/blink_mode
+
+    # Nubia NFC msm specific files that need to be created on /data
+    mkdir /data/nfc
+    mkdir /etc/param
+    start nfc-default-sh
