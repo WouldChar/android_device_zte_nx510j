@@ -1,3 +1,7 @@
+# VR HAL
+PRODUCT_PACKAGES += \
+    vr.msm8994
+
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
