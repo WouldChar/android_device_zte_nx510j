@@ -1,7 +1,3 @@
-PRODUCT_PACKAGES += \
-	tp_node.sh
-
-# Input device files for nx510j
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/cyttsp5_btn.kl:system/usr/keylayout/cyttsp5_btn.kl \

@@ -44,14 +44,14 @@ on boot
     chmod 0664 /sys/class/power_supply/battery/charging_enabled
     restorecon /sys/class/power_supply/battery/charging_enabled
 
-service zram-init /system/bin/sh /system/etc/init.zram.sh
+service zram-init /system/bin/sh /init.zram.sh
     class late_start
     user root
     disabled
     oneshot
 
 #TP node start
-service tp_node /system/bin/sh /system/bin/tp_node.sh
+service tp_node /system/bin/sh /tp_node.sh
     class main
     user root
     group root

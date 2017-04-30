@@ -9,4 +9,8 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.qcom.sh \
-    init.zram.sh
+    init.zram.sh \
+    fstab.qcom \
+    init.qcom.rc \
+    ueventd.qcom.rc \
+    tp_node.sh

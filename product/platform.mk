@@ -1,8 +1,3 @@
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.rc \
-    ueventd.qcom.rc
-
 # Storage
 ro.sys.sdcardfs=true
 
