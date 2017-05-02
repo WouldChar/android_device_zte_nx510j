@@ -25,6 +25,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 PRODUCT_PACKAGES += charger charger_res_images \
     init.recovery.qcom.rc
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dt.img:dt.img \
+    $(LOCAL_PATH)/kernel:kernel \
+    $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom \
+    $(LOCAL_PATH)/recovery/etc/twrp.fstab:root/etc/twrp.fstab
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_nx510j
 BOARD_VENDOR := nubia

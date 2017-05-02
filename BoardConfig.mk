@@ -9,7 +9,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8994
@@ -28,14 +28,9 @@ BOARD_KERNEL_PAGESIZE :=  4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 
-TARGET_KERNEL_SOURCE := kernel/zte/msm8994
-TARGET_KERNEL_CONFIG := lineageos_nx510j_defconfig
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-3
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+TARGET_PREBUILT_KERNEL := device/zte/nx510j/kernel
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --dt device/zte/nx510j/dt.img
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
