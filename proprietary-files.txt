@@ -21,6 +21,7 @@ etc/firmware/rampatch_tlv.img
 
 # Camera
 bin/mm-qcamera-daemon
+lib/libFNVfbEngineLib.so
 lib/hw/camera.msm8994.so
 lib/libImageAlogrithm.so
 lib/libmmcamera_interface.so
@@ -110,7 +111,9 @@ vendor/lib/libois_lc898122.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
-vendor/lib/libsensor1.so
+vendor/lib64/libmmcamera2_q3a_core.so
+vendor/lib64/libmmcamera2_sensor_debug.so
+vendor/lib64/libmmcamera2_stats_algorithm.so
 
 # Camera actuators
 vendor/lib/libactuator_ad5823_camcorder.so
@@ -396,6 +399,8 @@ vendor/firmware/BCM20795A1_001.002.012.0003.0112_Generic_I2C_NCD_Unsigned_config
 bin/sensors.qcom
 etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf
+vendor/lib/libsensor1.so
+vendor/lib/sensors.ssc.so
 lib64/hw/sensors.oem.so
 vendor/lib64/hw/activity_recognition.msm8994.so
 vendor/lib64/libsensor1.so

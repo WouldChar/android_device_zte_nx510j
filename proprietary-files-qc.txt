@@ -201,6 +201,12 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal.so
+vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAmrwbplusDec.so
+vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libSHIMDivxDrm.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmosal.so
 
 # Network
 -priv-app/QtiTetherService/QtiTetherService.apk
