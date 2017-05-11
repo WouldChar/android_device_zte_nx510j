@@ -707,11 +707,6 @@ service ril-daemon3 /system/bin/rild -c 3
     group radio cache inet misc audio log readproc wakelock qcom_diag diag
     writepid /dev/cpuset/system-background/tasks
 
-service charger /charger
-    class charger
-    group log
-    seclabel u:r:healthd:s0
-
 service profiler_daemon /system/bin/profiler_daemon
     class late_start
     user root
