@@ -1,1 +1,2 @@
-allow vold proc_touchpanel:dir { read open };
+allow vold firmware_file:dir search;
+allow vold firmware_file:file r_file_perms;
