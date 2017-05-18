@@ -1,4 +1,4 @@
 allow system_server sensors_persist_file:dir search;
 allow system_server sensors_persist_file:file { open read };
-allow system_server persist_file:file { read write };
+allow system_server persist_file:file { read write open };
 allow system_server persist_proxcal_file:file { open read write };
