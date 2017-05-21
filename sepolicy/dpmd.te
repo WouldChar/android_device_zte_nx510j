@@ -1,0 +1,1 @@
+dontaudit dpmd self:capability sys_ptrace;
