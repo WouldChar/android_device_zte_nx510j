@@ -29,8 +29,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-3
-TARGET_PREBUILT_KERNEL := device/zte/nx510j/prebuilt/kernel
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --dt device/zte/nx510j/prebuilt/dt.img
+TARGET_PREBUILT_KERNEL := device/nubia/nx510j/prebuilt/kernel
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --dt device/nubia/nx510j/prebuilt/dt.img
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -53,7 +53,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
-TARGET_RECOVERY_FSTAB := device/zte/nx510j/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/nubia/nx510j/recovery/root/etc/twrp.fstab
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TW_EXTRA_LANGUAGES := true

@@ -1,6 +1,4 @@
-Copyright 2017 - The LineageOS Project
-
-Device configuration for ZTE Nubia Z9 Max NX510J.
+Device configuration for Nubia Z9 Max NX510J.
 =====================================
 
 Basic   | Spec Sheet
@@ -19,4 +17,4 @@ Rear Camera  | 16.0 MP, LED flash
 Front Camera | 8.0 MP
 Release Date | March 2015
 
-![ZTE Nubia Z9 Max](http://static.nubia.cn/product/max/images/params/params_z9max02.jpg "ZTE Nubia Z9 Max")
+![Nubia Z9 Max NX510J](http://static.nubia.cn/product/max/images/params/params_z9max02.jpg "Nubia5 Z9 Max NX510J")

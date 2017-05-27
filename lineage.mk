@@ -33,17 +33,17 @@ PRODUCT_COPY_FILES += \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_nx510j
-BOARD_VENDOR := nubia
-TARGET_VENDOR := nubia
+BOARD_VENDOR := Nubia
+TARGET_VENDOR := Nubia
 PRODUCT_DEVICE := nx510j
 
-PRODUCT_GMS_CLIENTID_BASE := android-zte
+PRODUCT_GMS_CLIENTID_BASE := android-nubia
 
-PRODUCT_BRAND := nubia
+PRODUCT_BRAND := Nubia
 PRODUCT_MODEL := NX510J
-PRODUCT_MANUFACTURER := nubia
+PRODUCT_MANUFACTURER := Nubia
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=NX510J PRODUCT_NAME=NX510J
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=nubia/NX510J/NX510J:7.1.2/Nougat/WouldChar:user/release-keys \
+    BUILD_FINGERPRINT=Nubia/NX510J/NX510J:7.1.2/Nougat/WouldChar:user/release-keys \
     PRIVATE_BUILD_DESC="NX510J-user 7.1.2 Nougat WouldChar release-keys"
