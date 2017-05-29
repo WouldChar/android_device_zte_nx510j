@@ -97,11 +97,6 @@ write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 384000
 # restore A57's max
 copy /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 
-# insert core_ctl module and use conservative paremeters
-insmod /system/lib/modules/core_ctl.ko
-restorecon -R /sys/devices/system/cpu # must restore after insertion
-echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
-
 # Restore CPU 4 max freq from msm_performance
 write /sys/module/msm_performance/parameters/cpu_max_freq "4:4294967295 5:4294967295 6:4294967295 7:4294967295"
 

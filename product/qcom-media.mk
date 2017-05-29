@@ -11,6 +11,10 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc
 
+# VR
+PRODUCT_PACKAGES += \
+    vr.msm8994
+
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     media.aac_51_output_enabled=true \

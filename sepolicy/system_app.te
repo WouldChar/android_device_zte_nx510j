@@ -1,0 +1,5 @@
+allow system_app dpmservice:service_manager add;
+allow system_app cne_service:service_manager add;
+allow system_app dpmd_socket:sock_file write;
+allow system_app dpmd_data_file:dir { search getattr open read write add_name };
+allow system_app dpmd_data_file:file { getattr read write open lock setattr create };

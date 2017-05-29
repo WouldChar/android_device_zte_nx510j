@@ -2,7 +2,6 @@ PRODUCT_PACKAGES += \
     audiod \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessingdescriptors \
     libqcomvoiceprocessing
 
 # speaker protection

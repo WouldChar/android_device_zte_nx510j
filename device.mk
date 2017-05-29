@@ -30,4 +30,4 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 # Call the proprietary setup
-$(call inherit-product-if-exists, vendor/zte/nx510j/nx510j-vendor.mk)
+$(call inherit-product-if-exists, vendor/nubia/nx510j/nx510j-vendor.mk)

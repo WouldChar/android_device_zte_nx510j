@@ -19,7 +19,7 @@ set -e
 
 # Required!
 DEVICE=nx510j
-VENDOR=zte
+VENDOR=nubia
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

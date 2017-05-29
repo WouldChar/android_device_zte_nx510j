@@ -1,6 +1,3 @@
-PRODUCT_PACKAGES += \
-    Snap
-
 # Camera2 API
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1

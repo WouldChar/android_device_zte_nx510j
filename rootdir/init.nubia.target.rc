@@ -24,14 +24,11 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-import /init.nubia.charger.rc
-import /init.nubia.led.rc
-import /init.nubia.nfc.rc
-import /init.nubia.poweroff_charging.rc
-import /init.nubia.sensors.rc
-
-on early-init
-    write /sys/block/zram0/comp_algorithm lz4
+import init.nubia.charger.rc
+import init.nubia.led.rc
+import init.nubia.nfc.rc
+import init.nubia.poweroff_charging.rc
+import init.nubia.sensors.rc
 
 on boot
     # execute script to set initial CPU settings
@@ -41,12 +38,6 @@ on boot
     # execute script to set TP nodes
     # don't run as a service to avoid race conditions
     exec - root root system -- /system/bin/init.nubia.tp.sh
-
-    # update foreground cpuset now that processors are up
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
-    write /dev/cpuset/background/cpus 0-2
-    write /dev/cpuset/system-background/cpus 0-3
 
     # adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
